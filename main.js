@@ -347,7 +347,7 @@ var clearedLinesWeight = 1.8;
 var seperateClearsWeight = 1.2;
 var smallSpacesWeight = 1.1;
 var amountEmptyWeight = 0.6;
-var answerLimit = 20000;
+var answerLimit = 500000;
 
 class UISyncedGrid extends Grid { 
 
