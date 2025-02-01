@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockBlastBot</title>
+    <script src="/main.js" defer></script>
+    <link rel="stylesheet" href="/styles.css"></>
+</head>
+<body>
+    <div class="container">
+        <h1>Main Board</h1>
+        <div class="grid" id="main-grid"></div>
+        <button type="button" onclick="prepareSolution();">Calculate Solution</button>
+        <h1>Pieces</h1>
+        <div class="piece-grids">
+            <div class="grid piece-grid" id="piece-grid-0"></div>
+            <div class="grid piece-grid" id="piece-grid-1"></div>
+            <div class="grid piece-grid" id="piece-grid-2"></div>
+        </div>
+        <div class="overlay hidden" id="solution-overlay">
+            <div id="solution-container">
+                <h1>Solution</h1>
+                <h3 id="solution-status"></h3>
+                <div class="piece-grids">
+                    <div class="grid piece-grid solution-grid" id="solution-grid-0"></div>
+                    <div class="grid piece-grid solution-grid" id="solution-grid-1"></div>
+                    <div class="grid piece-grid solution-grid" id="solution-grid-2"></div>
+                </div>
+                <button type="button" onclick="document.getElementById('solution-overlay').classList.add('hidden');">Close</button>
+                <button type="button" onclick="acceptSolution(); document.getElementById('solution-overlay').classList.add('hidden');">Accept Solution</button>
+            </div>
+        </div>
+        <h1>Bot Configuration</h1>
+        <p>ClearedLinesWeight: <span id="ClearedLinesWeight">1.8</span></p>
+        <input type="range" title="ClearedLinesWeight" min="-1" max="5" value="1.8" step="0.01" oninput="clearedLinesWeight = this.value; document.getElementById('ClearedLinesWeight').innerHTML = this.value;"></input>
+        <p>SeperateClearsWeight: <span id="SeperateClearsWeight">1.2</span></p>
+        <input type="range" title="SeperateClearsWeight" min="-1" max="5" value="1.2" step="0.01" oninput="seperateClearsWeight = this.value; document.getElementById('SeperateClearsWeight').innerHTML = this.value;"></input>
+        <p>NoSmallSpacesWeight: <span id="NoSmallSpacesWeight">1.1</span></p>
+        <input type="range" title="NoSmallSpacesWeight" min="-1" max="5" value="1.1" step="0.01" oninput="noSmallSpacesWeight = this.value; document.getElementById('NoSmallSpacesWeight').innerHTML = this.value;"></input>
+        <p>AmountEmptyWeight: <span id="AmountEmptyWeight">0.6</span></p>
+        <input type="range" title="AmountEmptyWeight" min="-1" max="5" value="0.6" step="0.01" oninput="amountEmptyWeight = this.value; document.getElementById('AmountEmptyWeight').innerHTML = this.value;"></input>
+        <p>AnswerLimit: <span id="AnswerLimit">20000</span></p>
+        <input type="range" title="AmountEmptyWeight" min="1" max="200000" value="20000" step="1" oninput="answerLimit = this.value; document.getElementById('AnswerLimit').innerHTML = this.value;"></input>
+    </div>
+</body>
+</html>
