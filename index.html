@@ -27,8 +27,8 @@
                     <div class="grid piece-grid solution-grid" id="solution-grid-1"></div>
                     <div class="grid piece-grid solution-grid" id="solution-grid-2"></div>
                 </div>
-                <button type="button" onclick="document.getElementById('solution-overlay').classList.add('hidden');">Close</button>
-                <button type="button" onclick="acceptSolution(); document.getElementById('solution-overlay').classList.add('hidden');">Accept Solution</button>
+                <button type="button" onclick="closeSolutions();">Close</button>
+                <button type="button" onclick="acceptSolution(); closeSolutions();">Accept Solution</button>
             </div>
         </div>
         <h1>Bot Configuration</h1>

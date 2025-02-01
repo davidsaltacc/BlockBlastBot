@@ -600,3 +600,10 @@ function acceptSolution() {
     currentSolution = null;
 
 }
+
+function closeSolutions() {
+    solution0Grid.clearAllGhosts();
+    solution1Grid.clearAllGhosts();
+    solution2Grid.clearAllGhosts();
+    document.getElementById('solution-overlay').classList.add('hidden');
+}
